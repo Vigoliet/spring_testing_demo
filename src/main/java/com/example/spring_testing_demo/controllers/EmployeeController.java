@@ -50,8 +50,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/seed")
-    public boolean postSeedUsers() {
-        return employeeService.seed();
+    public Iterable<Employee> postSeedUsers() {
+        return employeeService.seedEmployees();
     }
 
 }

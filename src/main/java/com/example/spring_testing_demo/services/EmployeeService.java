@@ -46,21 +46,16 @@ public class EmployeeService {
 
     }
 
-    public boolean seed(){
-        try {
-            Employee[] users = {
+    public Iterable <Employee> seedEmployees(){
+
+            Employee[] employees = {
                     new Employee("vigor", 100000),
                     new Employee("andreas", 100000),
                     new Employee("adam", 100000)
             };
-            var usersList = Arrays.stream(users).toList();
-            employeeRepository.saveAll(usersList);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-
-        return true;
+            var employeesList = Arrays.stream(employees).toList();
+            employeeRepository.saveAll(employeesList);
+            return employeesList;
     }
 
 }
